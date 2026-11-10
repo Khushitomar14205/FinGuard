@@ -11,8 +11,8 @@ or legitimate (`isFraud = 0`).
 | --- | --- | --- |
 | **Task 1 — Data Cleaning & Visualization** | Load, inspect, assess quality, handle missing values, de-duplicate, validate types, LEFT-merge transaction + identity on `TransactionID`, outlier analysis, EDA, 8 visualisations, export cleaned dataset | ✅ Complete — see `Task-1-Data-Cleaning/` |
 | **Task 2 — Feature Engineering** | (Planned) Build modelling-ready features from the cleaned dataset | Planned |
-| **Task 3 — Model Training & Evaluation** | (Planned) Train and evaluate fraud classifiers; handle the ~3.5% fraud rate explicitly | Planned |
-| **Task 4 — Interpretation & Reporting** | (Planned) Interpret results, tune the decision threshold, summarise findings | Planned |
+| **Task 3 — Fraud Detection Model Development & Evaluation** | (Planned) Train and evaluate fraud classifiers; handle the ~3.5% fraud rate explicitly | Planned |
+| **Task 4 — Explainable Fraud Detection Application & Dashboard** | (Planned) Explainable fraud detection application with a dashboard | Planned |
 
 ## Task 1 headline results (measured, not estimated)
 
@@ -30,6 +30,52 @@ or legitimate (`isFraud = 0`).
 - Output: `Task-1-Data-Cleaning/cleaned_data/merged_cleaned_transactions.csv`
   (590,540 x 434, ~679 MB) + 8 PNG visualisations in
   `Task-1-Data-Cleaning/visualizations/`.
+
+The cleaned dataset is generated locally by executing the notebook and is not
+committed to the repository because of its size.
+
+## Technology Stack
+
+- **Python 3.12**
+- **pandas, NumPy** — data loading, cleaning and analysis
+- **Matplotlib, Seaborn** — visualisation
+- **scikit-learn** — `SimpleImputer` only (median / mode imputation)
+- **Jupyter** (`nbformat`, `ipykernel`) — notebook execution
+- **Git & GitHub** — version control
+
+## Quick Start
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Khushitomar14205/FinGuard.git
+cd FinGuard
+
+# 2. Install dependencies
+python -m venv .venv
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
+pip install -r Task-1-Data-Cleaning/requirements.txt
+python -m ipykernel install --user --name finguard --display-name "FinGuard (Python 3.12)"
+```
+
+**3. Download the dataset** — from Kaggle
+(https://www.kaggle.com/competitions/ieee-fraud-detection/data; sign in and
+accept the competition rules first) or the mirror noted in
+`Task-1-Data-Cleaning/data/README.md`. Then place the files here:
+
+```text
+Task-1-Data-Cleaning/data/train_transaction.csv
+Task-1-Data-Cleaning/data/train_identity.csv
+```
+
+**4. Run the notebook** (takes ~3 minutes):
+
+```bash
+cd Task-1-Data-Cleaning/notebooks
+jupyter nbconvert --to notebook --execute --inplace Task1_Data_Cleaning_Visualization.ipynb
+```
+
+This regenerates the 8 visualisations and the cleaned dataset in
+`Task-1-Data-Cleaning/cleaned_data/`.
 
 ## Repository structure
 
