@@ -4,7 +4,7 @@ FinGuard is a four-task project that builds a fraud detection system on the
 **IEEE-CIS Fraud Detection** dataset (Kaggle competition, Vesta Corporation)
 — real-world e-commerce card transactions labelled fraudulent (`isFraud = 1`)
 or legitimate (`isFraud = 0`).
-
+     
 ## Development roadmap
 
 | Task | Scope | Status |
