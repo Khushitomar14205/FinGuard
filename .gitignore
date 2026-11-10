@@ -1,0 +1,22 @@
+# Large datasets — never commit (download separately, see Task-1-Data-Cleaning/data/README.md)
+*.csv
+*.parquet
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Local config / OS
+.env
+.DS_Store
+Thumbs.db
